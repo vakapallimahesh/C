@@ -1,0 +1,15 @@
+arr = list(map(int, input().split()))
+target = int(input())
+
+s = set()
+found = False
+
+for x in arr:
+    if target - x in s:
+        print("Yes")
+        found = True
+        break
+    s.add(x)
+
+if not found:
+    print("No")
