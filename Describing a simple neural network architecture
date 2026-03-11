@@ -1,0 +1,22 @@
+import numpy as np
+
+# Step 1: Define input, weights, and bias (e.g. student: hours_studied=5, previous_grade=7)
+inputs = np.array([5, 7])
+
+# Weights for the hidden neuron
+weights = np.array([0.1, 0.2])
+
+# Bias for the hidden neuron
+bias = 0.5
+
+# Step 2: Calculate neuron output (Weighted sum + bias)
+hidden_neuron_output = np.dot(inputs, weights) + bias
+print("Hidden Neuron Output:", round(hidden_neuron_output,2))
+
+
+# Step 3: Output neuron calculation (Using hidden neuron output as input)
+weights_output = np.array([0.3])
+bias_output = -0.1
+
+output = np.dot(np.array([hidden_neuron_output]), weights_output) + bias_output
+print("Output Layer Neuron (Pass Probability):", round(output, 2))
